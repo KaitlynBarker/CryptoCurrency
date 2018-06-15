@@ -20,7 +20,7 @@
 		71831DA320D4155800327C0A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71831DA220D4155800327C0A /* Constants.swift */; };
 		71831DA520D415A700327C0A /* PopularCurrencyListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71831DA420D415A700327C0A /* PopularCurrencyListTableViewController.swift */; };
 		71831DA720D415F800327C0A /* PopularCurrencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71831DA620D415F800327C0A /* PopularCurrencyTableViewCell.swift */; };
-		71831DAB20D417CF00327C0A /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71831DAA20D417CE00327C0A /* Currency.swift */; };
+		71831DAD20D41FD700327C0A /* JSONResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71831DAC20D41FD700327C0A /* JSONResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +60,7 @@
 		71831DA220D4155800327C0A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		71831DA420D415A700327C0A /* PopularCurrencyListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PopularCurrencyListTableViewController.swift; path = CryptoCurrency/Helpers/PopularCurrencyListTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		71831DA620D415F800327C0A /* PopularCurrencyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCurrencyTableViewCell.swift; sourceTree = "<group>"; };
-		71831DAA20D417CE00327C0A /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		71831DAC20D41FD700327C0A /* JSONResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,7 +178,7 @@
 		7115272920D2E9E400D7DDA3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				71831DAA20D417CE00327C0A /* Currency.swift */,
+				71831DAC20D41FD700327C0A /* JSONResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -340,7 +340,7 @@
 				71831DA720D415F800327C0A /* PopularCurrencyTableViewCell.swift in Sources */,
 				711526FC20D2E74000D7DDA3 /* CryptoCurrency.xcdatamodeld in Sources */,
 				71831DA320D4155800327C0A /* Constants.swift in Sources */,
-				71831DAB20D417CF00327C0A /* Currency.swift in Sources */,
+				71831DAD20D41FD700327C0A /* JSONResponse.swift in Sources */,
 				71831DA520D415A700327C0A /* PopularCurrencyListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

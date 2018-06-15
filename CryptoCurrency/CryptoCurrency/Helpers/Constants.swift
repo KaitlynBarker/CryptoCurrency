@@ -19,3 +19,4 @@ class Constants {
 }
 
 // https://www.cryptocompare.com/ - imageURL - media/19633/btc.png
+// https://min-api.cryptocompare.com/data/all/coinlist - for coin list
