@@ -9,16 +9,15 @@
 import UIKit
 
 class PopularCurrencyTableViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+    
+    // MARK: - Outlets
+    
+    @IBOutlet weak var currencyImageView: UIImageView!
+    @IBOutlet weak var currencyNameLabel: UILabel!
+    @IBOutlet weak var conversionTypeLabel: UILabel!
+    @IBOutlet weak var currentPriceLabel: UILabel!
+    
+    // MARK: - Actions
+    
+    
 }

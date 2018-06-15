@@ -73,6 +73,10 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="conversionTypeLabel" destination="HJK-XW-hku" id="H91-Sa-Xvp"/>
+                                    <outlet property="currencyImageView" destination="g5F-2N-Rhc" id="tVi-qQ-ku4"/>
+                                    <outlet property="currencyNameLabel" destination="tIe-MJ-Udo" id="uT1-uW-HbI"/>
+                                    <outlet property="currentPriceLabel" destination="Wgl-ry-if0" id="ZjW-Wo-Zdh"/>
                                     <segue destination="o14-U3-EXh" kind="show" identifier="toCurrencyDetailVC" id="qaD-mU-lOp"/>
                                 </connections>
                             </tableViewCell>

@@ -9,11 +9,19 @@
 import UIKit
 
 class PopularCurrencyListTableViewController: UITableViewController {
+    
+    // MARK: - Outlets
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
+    
+    // MARK: - Actions
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
