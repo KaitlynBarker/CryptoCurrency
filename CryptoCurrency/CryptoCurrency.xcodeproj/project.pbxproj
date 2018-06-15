@@ -14,6 +14,9 @@
 		7115270120D2E74000D7DDA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 711526FF20D2E74000D7DDA3 /* LaunchScreen.storyboard */; };
 		7115270C20D2E74000D7DDA3 /* CryptoCurrencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7115270B20D2E74000D7DDA3 /* CryptoCurrencyTests.swift */; };
 		7115271720D2E74000D7DDA3 /* CryptoCurrencyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7115271620D2E74000D7DDA3 /* CryptoCurrencyUITests.swift */; };
+		71831D9820D3FDF200327C0A /* TabBarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71831D9720D3FDF200327C0A /* TabBarController.storyboard */; };
+		71831D9A20D3FE0500327C0A /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71831D9920D3FE0500327C0A /* TabBarController.swift */; };
+		71831D9C20D4005F00327C0A /* PopularCurrency.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71831D9B20D4005F00327C0A /* PopularCurrency.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		7115271220D2E74000D7DDA3 /* CryptoCurrencyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptoCurrencyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7115271620D2E74000D7DDA3 /* CryptoCurrencyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCurrencyUITests.swift; sourceTree = "<group>"; };
 		7115271820D2E74000D7DDA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71831D9720D3FDF200327C0A /* TabBarController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBarController.storyboard; sourceTree = "<group>"; };
+		71831D9920D3FE0500327C0A /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		71831D9B20D4005F00327C0A /* PopularCurrency.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PopularCurrency.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +110,8 @@
 				7115272620D2E9D400D7DDA3 /* ViewControllers */,
 				7115272520D2E9CD00D7DDA3 /* Resources */,
 				711526F720D2E74000D7DDA3 /* Main.storyboard */,
+				71831D9B20D4005F00327C0A /* PopularCurrency.storyboard */,
+				71831D9720D3FDF200327C0A /* TabBarController.storyboard */,
 				7115270220D2E74000D7DDA3 /* Info.plist */,
 			);
 			path = CryptoCurrency;
@@ -169,6 +177,7 @@
 		7115272A20D2E9E800D7DDA3 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				71831D9920D3FE0500327C0A /* TabBarController.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -277,8 +286,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71831D9C20D4005F00327C0A /* PopularCurrency.storyboard in Resources */,
 				7115270120D2E74000D7DDA3 /* LaunchScreen.storyboard in Resources */,
 				711526FE20D2E74000D7DDA3 /* Assets.xcassets in Resources */,
+				71831D9820D3FDF200327C0A /* TabBarController.storyboard in Resources */,
 				711526F920D2E74000D7DDA3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,6 +315,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71831D9A20D3FE0500327C0A /* TabBarController.swift in Sources */,
 				711526F420D2E74000D7DDA3 /* AppDelegate.swift in Sources */,
 				711526FC20D2E74000D7DDA3 /* CryptoCurrency.xcdatamodeld in Sources */,
 			);
