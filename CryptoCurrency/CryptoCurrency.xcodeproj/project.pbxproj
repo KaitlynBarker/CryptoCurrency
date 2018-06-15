@@ -109,9 +109,7 @@
 				7115272720D2E9DA00D7DDA3 /* Views */,
 				7115272620D2E9D400D7DDA3 /* ViewControllers */,
 				7115272520D2E9CD00D7DDA3 /* Resources */,
-				711526F720D2E74000D7DDA3 /* Main.storyboard */,
-				71831D9B20D4005F00327C0A /* PopularCurrency.storyboard */,
-				71831D9720D3FDF200327C0A /* TabBarController.storyboard */,
+				71831D9F20D4095300327C0A /* Storyboards */,
 				7115270220D2E74000D7DDA3 /* Info.plist */,
 			);
 			path = CryptoCurrency;
@@ -180,6 +178,16 @@
 				71831D9920D3FE0500327C0A /* TabBarController.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		71831D9F20D4095300327C0A /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				711526F720D2E74000D7DDA3 /* Main.storyboard */,
+				71831D9B20D4005F00327C0A /* PopularCurrency.storyboard */,
+				71831D9720D3FDF200327C0A /* TabBarController.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
