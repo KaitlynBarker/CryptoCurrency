@@ -111,8 +111,8 @@
 				7115272520D2E9CD00D7DDA3 /* Resources */,
 				711526F720D2E74000D7DDA3 /* Main.storyboard */,
 				71831D9B20D4005F00327C0A /* PopularCurrency.storyboard */,
-				7115270220D2E74000D7DDA3 /* Info.plist */,
 				71831D9720D3FDF200327C0A /* TabBarController.storyboard */,
+				7115270220D2E74000D7DDA3 /* Info.plist */,
 			);
 			path = CryptoCurrency;
 			sourceTree = "<group>";
