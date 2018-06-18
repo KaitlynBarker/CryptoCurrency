@@ -37,11 +37,22 @@ class LoginViewController: UIViewController {
     }
     @IBAction func loginButtonPressed(_ sender: Any) {
         
-        if emailTextField.text == "admin" && passwordTextField.text == "admin"{
-            print("Success")
-        }else{
-            print("fail")
+        
+        if self.emailTextField.text == "" || self.passwordTextField.text == "" {
+            
+            
+            let alertController = UIAlertController(title: "Error", message: "Please enter an email and password.", preferredStyle: .alert)
+            
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+            
+        } else {
+            
+            
         }
+
     }
     
     override func didReceiveMemoryWarning() {
