@@ -100,11 +100,6 @@ enum Conversion: String, Codable {
     case multiply = "multiply"
 }
 
-//enum ConversionSymbol: String, Codable {
-//    case empty = ""
-//    case eth = "ETH"
-//}
-
 enum CurrencyTo: String, Codable {
     case usd = "USD"
 }
