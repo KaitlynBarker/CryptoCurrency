@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -77,7 +76,7 @@
                                     <outlet property="currencyImageView" destination="g5F-2N-Rhc" id="tVi-qQ-ku4"/>
                                     <outlet property="currencyNameLabel" destination="tIe-MJ-Udo" id="uT1-uW-HbI"/>
                                     <outlet property="currentPriceLabel" destination="Wgl-ry-if0" id="ZjW-Wo-Zdh"/>
-                                    <segue destination="o14-U3-EXh" kind="show" identifier="toCurrencyDetailVC" id="qaD-mU-lOp"/>
+                                    <segue destination="czj-tJ-KFD" kind="show" identifier="toCurrencyDetailSB" trigger="accessoryAction" id="eZC-4r-m6h"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -92,20 +91,13 @@
             </objects>
             <point key="canvasLocation" x="2125.5999999999999" y="-272.11394302848578"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="Ccx-d2-nsz">
+        <!--CurrencyDetail-->
+        <scene sceneID="fdh-v8-obK">
             <objects>
-                <viewController id="o14-U3-EXh" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="x8K-Vq-UzY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="by0-iX-3H6"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hBT-uU-bbz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="CurrencyDetail" id="czj-tJ-KFD" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qgh-GO-Tsb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2914" y="-272"/>
+            <point key="canvasLocation" x="3081" y="-273"/>
         </scene>
         <!--Item-->
         <scene sceneID="HR8-gg-F8e">

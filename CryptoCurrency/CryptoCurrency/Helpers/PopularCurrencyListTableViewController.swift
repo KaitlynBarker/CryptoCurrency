@@ -22,7 +22,10 @@ class PopularCurrencyListTableViewController: UITableViewController {
         NetworkManager.shared.getPopularCurrencyInfo { (response) in
             guard let response = response else { return }
             
-            self.currencyData = response.data
+            DispatchQueue.main.async {
+                self.currencyData = response.data
+                self.tableView.reloadData()
+            }
         }
         
     }
@@ -90,6 +93,12 @@ class PopularCurrencyListTableViewController: UITableViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if segue.identifier == "toCurrencyDetailSB" {
+            guard let destinationVC = segue.destination as? CurrencyDetailViewController else { return }
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            let currencyData = self.currencyData[indexPath.row]
+            
+            destinationVC.currencyData = currencyData
+        }
     }
 }

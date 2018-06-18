@@ -31,12 +31,14 @@ class PopularCurrencyTableViewCell: UITableViewCell {
         guard let currencyImageURL = coinInfo.imageURL else { return }
         
         NetworkManager.shared.getCurrencyImage(url: currencyImageURL) { (image) in
-            self.currencyImageView.image = image
-            self.currencyNameLabel.text = coinInfo.fullName
-            self.conversionTypeLabel.text = "\(coinInfo.name) -> \(conversionInfo.currencyTo)"
-            
-            // FIXME: - update the current price label when we figure out how to get the price.
-            self.currentPriceLabel.text = "YOUR SOUL!!"
+            DispatchQueue.main.async {
+                self.currencyImageView.image = image
+                self.currencyNameLabel.text = coinInfo.fullName
+                self.conversionTypeLabel.text = "\(coinInfo.name) -> \(conversionInfo.currencyTo.rawValue.uppercased())"
+                
+                // FIXME: - update the current price label when we figure out how to get the price.
+                self.currentPriceLabel.text = "YOUR SOUL!!"
+            }
         }
     }
 }
