@@ -21,7 +21,11 @@
 		71831DA520D415A700327C0A /* PopularCurrencyListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71831DA420D415A700327C0A /* PopularCurrencyListTableViewController.swift */; };
 		71831DA720D415F800327C0A /* PopularCurrencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71831DA620D415F800327C0A /* PopularCurrencyTableViewCell.swift */; };
 		71831DAD20D41FD700327C0A /* JSONResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71831DAC20D41FD700327C0A /* JSONResponse.swift */; };
+
 		D47705C020D44BD400DA0464 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47705BF20D44BD400DA0464 /* UITextFieldExtension.swift */; };
+
+		71831DAF20D4367700327C0A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71831DAE20D4367700327C0A /* NetworkManager.swift */; };
+
 		D4AA047D20D412A20018BAA0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AA047C20D412A20018BAA0 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,7 +67,11 @@
 		71831DA420D415A700327C0A /* PopularCurrencyListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PopularCurrencyListTableViewController.swift; path = CryptoCurrency/Helpers/PopularCurrencyListTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		71831DA620D415F800327C0A /* PopularCurrencyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCurrencyTableViewCell.swift; sourceTree = "<group>"; };
 		71831DAC20D41FD700327C0A /* JSONResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONResponse.swift; sourceTree = "<group>"; };
+
 		D47705BF20D44BD400DA0464 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
+
+		71831DAE20D4367700327C0A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+
 		D4AA047C20D412A20018BAA0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = CryptoCurrency/Storyboards/LoginViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -194,6 +202,7 @@
 			children = (
 				71831D9920D3FE0500327C0A /* TabBarController.swift */,
 				71831DA220D4155800327C0A /* Constants.swift */,
+				71831DAE20D4367700327C0A /* NetworkManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -349,6 +358,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71831DAF20D4367700327C0A /* NetworkManager.swift in Sources */,
 				D4AA047D20D412A20018BAA0 /* LoginViewController.swift in Sources */,
 				D47705C020D44BD400DA0464 /* UITextFieldExtension.swift in Sources */,
 				71831D9A20D3FE0500327C0A /* TabBarController.swift in Sources */,

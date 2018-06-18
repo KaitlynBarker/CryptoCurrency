@@ -17,40 +17,40 @@ class CustomTabBarController: UITabBarController {
         super.viewDidLoad()
         
         self.customTabBar()
+        
+        let arrayOfImageNameForSelectedState = ["selectedSearch", "selectedHeart", "selectedTask"]
+        let arrayOfImageNameForUnselectedState = ["searchIcon", "heartIcon", "task"]
+        
+        if let count = self.tabBar.items?.count {
+            for i in 0...(count-1) {
+                let imageNameForSelectedState = arrayOfImageNameForSelectedState[i]
+                let imageNameForUnselectedState = arrayOfImageNameForUnselectedState[i]
+                
+                self.tabBar.items?[i].selectedImage = UIImage(named: imageNameForSelectedState)?.withRenderingMode(.alwaysOriginal)
+                self.tabBar.items?[i].image = UIImage(named: imageNameForUnselectedState)?.withRenderingMode(.alwaysOriginal)
+            }
+        }
+        
+//        let selectedColor = UIColor.candyAppleRed
+//        let unselectedColor = UIColor.customMaroon
+        
+//        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: unselectedColor], for: .normal)
+//        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: selectedColor], for: .selected)
     }
     
     func customTabBar() {
+        let pcStoryboard = UIStoryboard(name: "PopularCurrency", bundle: nil)
+        let popularListNav = pcStoryboard.instantiateViewController(withIdentifier: "PopularCurrency")
+        let popListNavController = UINavigationController(rootViewController: popularListNav)
+        popularListNav.title = "Popular Currencies"
+//        popularListNav.tabBarItem.image
+//        popularListNav.tabBarItem.selectedImage
         
+        viewControllers = [popListNavController]
     }
 }
 
 /*
- class CustomTabBarController: UITabBarController {
- override func viewDidLoad() {
- super.viewDidLoad()
- 
- customTabBar()
- 
- let arrayOfImageNameForSelectedState = ["selectedSearch", "selectedHeart", "selectedTask"]
- let arrayOfImageNameForUnselectedState = ["searchIcon", "heartIcon", "task"]
- 
- if let count = self.tabBar.items?.count {
- for i in 0...(count-1) {
- let imageNameForSelectedState = arrayOfImageNameForSelectedState[i]
- let imageNameForUnselectedState = arrayOfImageNameForUnselectedState[i]
- 
- self.tabBar.items?[i].selectedImage = UIImage(named: imageNameForSelectedState)?.withRenderingMode(.alwaysOriginal)
- self.tabBar.items?[i].image = UIImage(named: imageNameForUnselectedState)?.withRenderingMode(.alwaysOriginal)
- }
- }
- 
- let selectedColor = UIColor.candyAppleRed
- let unselectedColor = UIColor.customMaroon
- 
- UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: unselectedColor], for: .normal)
- UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: selectedColor], for: .selected)
- }
- 
  func customTabBar() {
  
  let storyboard = UIStoryboard(name: "Main", bundle: nil)

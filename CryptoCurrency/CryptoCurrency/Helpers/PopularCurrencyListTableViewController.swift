@@ -9,11 +9,27 @@
 import UIKit
 
 class PopularCurrencyListTableViewController: UITableViewController {
+    
+    var currencyData: [Datum] = []
+    
+    // MARK: - Outlets
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NetworkManager.shared.getPopularCurrencyInfo { (response) in
+            guard let response = response else { return }
+            
+            self.currencyData = response.data
+        }
+        
     }
+    
+    // MARK: - Actions
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -23,13 +39,15 @@ class PopularCurrencyListTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return self.currencyData.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "currencyCell", for: indexPath) as? PopularCurrencyTableViewCell else { return UITableViewCell() }
 
+        let currencyData = self.currencyData[indexPath.row]
         
+        cell.currencyData = currencyData
 
         return cell
     }

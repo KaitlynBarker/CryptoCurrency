@@ -14,7 +14,7 @@
         <!--Popular Currency List Table View Controller-->
         <scene sceneID="WBK-Bd-7gB">
             <objects>
-                <tableViewController id="9qA-fr-fdE" customClass="PopularCurrencyListTableViewController" customModule="CryptoCurrency" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="PopularCurrency" id="9qA-fr-fdE" customClass="PopularCurrencyListTableViewController" customModule="CryptoCurrency" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VQO-V1-ei9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -73,6 +73,10 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="conversionTypeLabel" destination="HJK-XW-hku" id="H91-Sa-Xvp"/>
+                                    <outlet property="currencyImageView" destination="g5F-2N-Rhc" id="tVi-qQ-ku4"/>
+                                    <outlet property="currencyNameLabel" destination="tIe-MJ-Udo" id="uT1-uW-HbI"/>
+                                    <outlet property="currentPriceLabel" destination="Wgl-ry-if0" id="ZjW-Wo-Zdh"/>
                                     <segue destination="o14-U3-EXh" kind="show" identifier="toCurrencyDetailVC" id="qaD-mU-lOp"/>
                                 </connections>
                             </tableViewCell>

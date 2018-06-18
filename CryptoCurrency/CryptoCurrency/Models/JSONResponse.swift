@@ -37,19 +37,23 @@ struct Datum: Codable {
 
 struct CoinInfo: Codable {
     let id, name, fullName, coinInfoInternal: String
-    let imageURL, url, algorithm, proofType: String
+    let url, algorithm, proofType: String
     let netHashesPerSecond: Double
     let blockNumber, blockTime: Int
     let blockReward: Double
     let type: Int
     let documentType: DocumentType
+    private var _imageURL: String
+    var imageURL: URL? {
+        return Constants.shared.baseImageURL?.appendingPathComponent(_imageURL)
+    }
     
     enum CodingKeys: String, CodingKey {
         case id = "Id"
         case name = "Name"
         case fullName = "FullName"
         case coinInfoInternal = "Internal"
-        case imageURL = "ImageUrl"
+        case _imageURL = "ImageUrl"
         case url = "Url"
         case algorithm = "Algorithm"
         case proofType = "ProofType"
@@ -61,6 +65,13 @@ struct CoinInfo: Codable {
         case documentType = "DocumentType"
     }
 }
+
+/*
+ private var _icon: String
+ var icon: URL? {
+ return URL(string: "http://openweathermap.org/img/w/\(_icon).png")
+ }
+*/
 
 enum DocumentType: String, Codable {
     case webpagecoinp = "Webpagecoinp"
