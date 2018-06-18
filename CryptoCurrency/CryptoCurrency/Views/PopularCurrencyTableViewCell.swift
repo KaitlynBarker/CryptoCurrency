@@ -17,7 +17,26 @@ class PopularCurrencyTableViewCell: UITableViewCell {
     @IBOutlet weak var conversionTypeLabel: UILabel!
     @IBOutlet weak var currentPriceLabel: UILabel!
     
-    // MARK: - Actions
+    var currencyData: Datum? {
+        didSet {
+            self.updateViews()
+        }
+    }
     
-    
+    func updateViews() {
+        guard let currencyData = self.currencyData else { return }
+        let coinInfo = currencyData.coinInfo
+        let conversionInfo = currencyData.conversionInfo
+        
+        guard let currencyImageURL = coinInfo.imageURL else { return }
+        
+        NetworkManager.shared.getCurrencyImage(url: currencyImageURL) { (image) in
+            self.currencyImageView.image = image
+            self.currencyNameLabel.text = coinInfo.fullName
+            self.conversionTypeLabel.text = "\(coinInfo.name) -> \(conversionInfo.currencyTo)"
+            
+            // FIXME: - update the current price label when we figure out how to get the price.
+            self.currentPriceLabel.text = "YOUR SOUL!!"
+        }
+    }
 }

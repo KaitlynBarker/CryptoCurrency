@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class NetworkManager {
     static let shared = NetworkManager()
@@ -45,6 +46,19 @@ class NetworkManager {
                 completion(nil)
                 return
             }
+        }
+        dataTask.resume()
+    }
+    
+    func getCurrencyImage(url: URL, completion: @escaping (UIImage?) -> Void) {
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        let dataTask = URLSession.shared.dataTask(with: request) { (data, _, error) in
+            if let error = error { debugPrint("Error getting image.", error.localizedDescription); completion(nil); return }
+            
+            guard let data = data, let image = UIImage(data: data) else { completion(nil); return }
+            completion(image)
         }
         dataTask.resume()
     }
