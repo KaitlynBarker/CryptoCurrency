@@ -66,12 +66,6 @@ struct CoinInfo: Codable {
     }
 }
 
-/*
- private var _icon: String
- var icon: URL? {
- return URL(string: "http://openweathermap.org/img/w/\(_icon).png")
- }
-*/
 
 enum DocumentType: String, Codable {
     case webpagecoinp = "Webpagecoinp"
@@ -79,7 +73,7 @@ enum DocumentType: String, Codable {
 
 struct ConversionInfo: Codable {
     let conversion: Conversion
-    let conversionSymbol: ConversionSymbol
+    let conversionSymbol: String
     let currencyFrom: String
     let currencyTo: CurrencyTo
     let market: Market
@@ -106,10 +100,10 @@ enum Conversion: String, Codable {
     case multiply = "multiply"
 }
 
-enum ConversionSymbol: String, Codable {
-    case empty = ""
-    case eth = "ETH"
-}
+//enum ConversionSymbol: String, Codable {
+//    case empty = ""
+//    case eth = "ETH"
+//}
 
 enum CurrencyTo: String, Codable {
     case usd = "USD"

@@ -13,16 +13,15 @@ class NetworkManager {
     static let shared = NetworkManager()
     
     func getPopularCurrencyInfo(completion: @escaping (Welcome?) -> Void) {
-        guard let baseURL = Constants.shared.baseURL else { completion(nil); return }
-        let url = baseURL.appendingPathComponent("top")
+        guard let baseURL = URL(string: "\(Constants.shared.baseURL)top/") else { completion(nil); return }
+        let url = baseURL.appendingPathComponent("totalvol")
         
         var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
         
-        let totalVolQueryItem = URLQueryItem(name: "totalvol", value: nil)
         let limitQueryItem = URLQueryItem(name: "limit", value: "10")
         let symbolQueryItem = URLQueryItem(name: "tsym", value: "USD")
         
-        components?.queryItems = [totalVolQueryItem, limitQueryItem, symbolQueryItem]
+        components?.queryItems = [limitQueryItem, symbolQueryItem]
         
         guard let requestURL = components?.url else { completion(nil); return }
         
@@ -65,3 +64,5 @@ class NetworkManager {
 }
 
 // top/totalvol?limit=10&tsym=USD
+// https://min-api.cryptocompare.com/data/top/totalvol?limit=10&tsym=USD
+// https://min-api.cryptocompare.com/data/top/totalvol?limit=10&tsym=USD
