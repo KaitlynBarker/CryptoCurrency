@@ -18,8 +18,8 @@ class CustomTabBarController: UITabBarController {
         
         self.customTabBar()
         
-        let arrayOfImageNameForSelectedState = ["selectedSearch", "selectedHeart", "selectedTask"]
-        let arrayOfImageNameForUnselectedState = ["searchIcon", "heartIcon", "task"]
+        let arrayOfImageNameForSelectedState = ["selectedCoin"]
+        let arrayOfImageNameForUnselectedState = ["coin"]
         
         if let count = self.tabBar.items?.count {
             for i in 0...(count-1) {
@@ -31,11 +31,11 @@ class CustomTabBarController: UITabBarController {
             }
         }
         
-//        let selectedColor = UIColor.candyAppleRed
-//        let unselectedColor = UIColor.customMaroon
+        let selectedColor = UIColor.customGreen
+        let unselectedColor = UIColor.black
         
-//        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: unselectedColor], for: .normal)
-//        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: selectedColor], for: .selected)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: unselectedColor], for: .normal)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: selectedColor], for: .selected)
     }
     
     func customTabBar() {
@@ -43,36 +43,9 @@ class CustomTabBarController: UITabBarController {
         let popularListNav = pcStoryboard.instantiateViewController(withIdentifier: "PopularCurrency")
         let popListNavController = UINavigationController(rootViewController: popularListNav)
         popularListNav.title = "Popular Currencies"
-//        popularListNav.tabBarItem.image
-//        popularListNav.tabBarItem.selectedImage
+        popularListNav.tabBarItem.image = #imageLiteral(resourceName: "coin")
+        popularListNav.tabBarItem.selectedImage = #imageLiteral(resourceName: "selectedCoin")
         
         viewControllers = [popListNavController]
     }
 }
-
-/*
- func customTabBar() {
- 
- let storyboard = UIStoryboard(name: "Main", bundle: nil)
- let searchNav = storyboard.instantiateViewController(withIdentifier: "RestaurantSearch")
- let searchNavController = UINavigationController(rootViewController: searchNav)
- searchNav.title = "Search"
- searchNav.tabBarItem.image = #imageLiteral(resourceName: "searchIcon")
- searchNav.tabBarItem.selectedImage = #imageLiteral(resourceName: "selectedSearch")
- 
- let favsNav = storyboard.instantiateViewController(withIdentifier: "FavoritesList")
- let favsNavController = UINavigationController(rootViewController: favsNav)
- favsNav.title = "Favorites"
- favsNav.tabBarItem.image = #imageLiteral(resourceName: "heart")
- favsNav.tabBarItem.selectedImage = #imageLiteral(resourceName: "selectedHeart")
- 
- let toTryNav = storyboard.instantiateViewController(withIdentifier: "ToTrysList")
- let toTryNavController = UINavigationController(rootViewController: toTryNav)
- toTryNav.title = "To Try"
- toTryNav.tabBarItem.image = #imageLiteral(resourceName: "taskList")
- toTryNav.tabBarItem.selectedImage = #imageLiteral(resourceName: "selectedTask")
- 
- viewControllers = [searchNavController, favsNavController, toTryNavController]
- }
- }
-*/
