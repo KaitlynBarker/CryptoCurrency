@@ -26,6 +26,7 @@
 		71831DB320D7FCD900327C0A /* CurrencyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71831DB220D7FCD900327C0A /* CurrencyDetailViewController.swift */; };
 		71831DB520D962D700327C0A /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71831DB420D962D700327C0A /* UIColorExt.swift */; };
 		D47705C020D44BD400DA0464 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47705BF20D44BD400DA0464 /* UITextFieldExtension.swift */; };
+		D47705C220D93B9800DA0464 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47705C120D93B9800DA0464 /* SignUpViewController.swift */; };
 		D4AA047D20D412A20018BAA0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AA047C20D412A20018BAA0 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +73,7 @@
 		71831DB220D7FCD900327C0A /* CurrencyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CurrencyDetailViewController.swift; path = CryptoCurrency/Storyboards/CurrencyDetailViewController.swift; sourceTree = SOURCE_ROOT; };
 		71831DB420D962D700327C0A /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
 		D47705BF20D44BD400DA0464 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
+		D47705C120D93B9800DA0464 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = CryptoCurrency/Extensions/SignUpViewController.swift; sourceTree = SOURCE_ROOT; };
 		D4AA047C20D412A20018BAA0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = CryptoCurrency/Storyboards/LoginViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -171,6 +173,7 @@
 				D4AA047C20D412A20018BAA0 /* LoginViewController.swift */,
 				71831DA420D415A700327C0A /* PopularCurrencyListTableViewController.swift */,
 				71831DB220D7FCD900327C0A /* CurrencyDetailViewController.swift */,
+				D47705C120D93B9800DA0464 /* SignUpViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 				D47705C020D44BD400DA0464 /* UITextFieldExtension.swift in Sources */,
 				71831D9A20D3FE0500327C0A /* TabBarController.swift in Sources */,
 				711526F420D2E74000D7DDA3 /* AppDelegate.swift in Sources */,
+				D47705C220D93B9800DA0464 /* SignUpViewController.swift in Sources */,
 				71831DA720D415F800327C0A /* PopularCurrencyTableViewCell.swift in Sources */,
 				711526FC20D2E74000D7DDA3 /* CryptoCurrency.xcdatamodeld in Sources */,
 				71831DA320D4155800327C0A /* Constants.swift in Sources */,
