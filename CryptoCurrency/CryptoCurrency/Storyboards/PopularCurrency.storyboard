@@ -91,10 +91,10 @@
             </objects>
             <point key="canvasLocation" x="2125.5999999999999" y="-272.11394302848578"/>
         </scene>
-        <!--CurrencyDetail-->
+        <!--CurrencyDetailViewController-->
         <scene sceneID="fdh-v8-obK">
             <objects>
-                <viewControllerPlaceholder storyboardName="CurrencyDetail" id="czj-tJ-KFD" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="CurrencyDetail" referencedIdentifier="CurrencyDetailViewController" id="czj-tJ-KFD" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qgh-GO-Tsb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3081" y="-273"/>
