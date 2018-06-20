@@ -13,7 +13,7 @@ class Constants {
     
     // api keys
     
-    let baseURL = "https://min-api.cryptocompare.com/data/"
+    let baseURL = "https://min-api.cryptocompare.com/data/top/"
     let baseImageURL = URL(string: "https://www.cryptocompare.com/")
     
 }
