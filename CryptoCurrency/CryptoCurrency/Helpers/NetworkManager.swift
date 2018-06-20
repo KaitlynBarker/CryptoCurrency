@@ -77,7 +77,6 @@ class NetworkManager {
             do {
                 let decoder = JSONDecoder()
                 let result = try decoder.decode(ExchangeResponse.self, from: data)
-                print("YAY IT WORKED")
                 completion(result)
             } catch let parseError {
                 debugPrint("error found parsing exchange json", parseError.localizedDescription)
