@@ -76,7 +76,7 @@
                                     <outlet property="currencyImageView" destination="g5F-2N-Rhc" id="tVi-qQ-ku4"/>
                                     <outlet property="currencyNameLabel" destination="tIe-MJ-Udo" id="uT1-uW-HbI"/>
                                     <outlet property="currentPriceLabel" destination="Wgl-ry-if0" id="ZjW-Wo-Zdh"/>
-                                    <segue destination="czj-tJ-KFD" kind="show" identifier="toCurrencyDetailSB" trigger="accessoryAction" id="eZC-4r-m6h"/>
+                                    <segue destination="czj-tJ-KFD" kind="show" identifier="toCurrencyDetailSB" id="dDM-Qx-9h8"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -91,10 +91,10 @@
             </objects>
             <point key="canvasLocation" x="2125.5999999999999" y="-272.11394302848578"/>
         </scene>
-        <!--CurrencyDetailViewController-->
+        <!--CurrencyDetail-->
         <scene sceneID="fdh-v8-obK">
             <objects>
-                <viewControllerPlaceholder storyboardName="CurrencyDetail" referencedIdentifier="CurrencyDetailViewController" id="czj-tJ-KFD" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="CurrencyDetail" referencedIdentifier="CurrencyDetail" id="czj-tJ-KFD" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qgh-GO-Tsb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3081" y="-273"/>

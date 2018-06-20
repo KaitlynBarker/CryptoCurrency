@@ -13,7 +13,7 @@
         <!--Currency Detail View Controller-->
         <scene sceneID="cXC-IF-l1C">
             <objects>
-                <viewController storyboardIdentifier="CurrencyDetailViewController" id="wCL-i8-iIi" customClass="CurrencyDetailViewController" customModule="CryptoCurrency" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CurrencyDetail" id="wCL-i8-iIi" customClass="CurrencyDetailViewController" customModule="CryptoCurrency" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dd0-gR-RIv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

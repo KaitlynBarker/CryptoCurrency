@@ -10,12 +10,21 @@ import UIKit
 
 class CurrencyDetailViewController: UIViewController {
     
+    // MARK: - Outlets
+    
     var currencyData: Datum?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        guard let currencyData = self.currencyData else { return }
+        
+        NetworkManager.shared.getExchangeData(datum: currencyData) { (response) in
+            guard let response = response else { return }
+            let printStatement = response.data.aggregatedData.type
+            
+            print(printStatement)
+        }
     }
 
     override func didReceiveMemoryWarning() {
