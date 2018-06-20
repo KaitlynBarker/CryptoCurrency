@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class LoginViewController: UIViewController {
 
@@ -14,6 +15,8 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var passwordTextField: UITextField!
     
+    var result = NSArray()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +52,7 @@ class LoginViewController: UIViewController {
             self.present(alertController, animated: true, completion: nil)
             
         } else {
-            
+            checkForUserNameAndPasswordMatch(email: self.emailTextField.text!, password: self.passwordTextField.text!)
             
         }
 
@@ -59,7 +62,56 @@ class LoginViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func checkForUserNameAndPasswordMatch( email: String, password : String){
+        let app = UIApplication.shared.delegate as! AppDelegate
+        
+        let context = app.persistentContainer.viewContext
+        
+        let fetchrequest = NSFetchRequest<NSFetchRequestResult>(entityName: "UserLogin")
+        
+        let predicate = NSPredicate(format: "email = %@", email)
+        
+        fetchrequest.predicate = predicate
+        do
+        {
+            result = try context.fetch(fetchrequest) as NSArray
+            
+            if result.count>0{
+                let objectEntity = result.firstObject as! UserLogin
+                
+                if objectEntity.email == email && objectEntity.password == password {
+                    let alertController = UIAlertController(title: "Success", message: "Login succesful", preferredStyle: .alert)
+                    
+                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alertController.addAction(defaultAction)
+                    
+                    self.present(alertController, animated: true, completion: nil)
+                    print("Login Succesfully")
+                }else{
+                    let alertController = UIAlertController(title: "Error", message: "Please enter a valid email and password.", preferredStyle: .alert)
+                    
+                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alertController.addAction(defaultAction)
+                    
+                    self.present(alertController, animated: true, completion: nil)
+                }
+            }else{
+                let alertController = UIAlertController(title: "Error", message: "There is no registered users", preferredStyle: .alert)
+                
+                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                alertController.addAction(defaultAction)
+                
+                self.present(alertController, animated: true, completion: nil)
+            
+            }
+        }catch {
+            let fetch_error = error as NSError
+            print("error", fetch_error.localizedDescription)
+        }
+        
+    }
 
-
+    
 }
 
