@@ -10,6 +10,8 @@ import UIKit
 
 class CurrencyDetailViewController: UIViewController {
     
+    // MARK: - Outlets
+    
     var currencyData: Datum?
 
     override func viewDidLoad() {
