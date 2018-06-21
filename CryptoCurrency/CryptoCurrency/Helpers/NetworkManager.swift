@@ -60,8 +60,9 @@ class NetworkManager {
         
         let fromSymbolQueryItem = URLQueryItem(name: "fsym", value: coinName)
         let toSymbolQueryItem = URLQueryItem(name: "tsym", value: "USD")
+        let limitQueryItem = URLQueryItem(name: "limit", value: "100") // amount of exchanges for points on the graph
         
-        components?.queryItems = [fromSymbolQueryItem, toSymbolQueryItem]
+        components?.queryItems = [fromSymbolQueryItem, toSymbolQueryItem, limitQueryItem]
         
         guard let requestURL = components?.url else { completion(nil); return }
         

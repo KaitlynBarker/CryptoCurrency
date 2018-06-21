@@ -1,4 +1,4 @@
-//
+ //
 //  GraphView.swift
 //  CryptoCurrency
 //
@@ -128,12 +128,13 @@ class GraphView: UIView {
         let xOffSet = xLabelSize.height + 2 // separation between the labels
         let yOffSet = yLabelSize.width + 5
         
-        let xScale = (bounds.width - yOffSet - xLabelSize.width/2 - 2)/(xMax - xMin)
-        let yScale = (bounds.height - xOffSet - yLabelSize.height/2 - 2)/(yMax - yMin)
-        
-        chartTransform = CGAffineTransform(a: xScale, b: 0, c: 0, d: -yScale, tx: yOffSet, ty: bounds.height - xOffSet)
-        
-        setNeedsDisplay() // the rectangle needs to be redrawn.
+        DispatchQueue.main.async {
+            let xScale = (self.bounds.width - yOffSet - xLabelSize.width/2 - 2)/(xMax - xMin)
+            let yScale = (self.bounds.height - xOffSet - yLabelSize.height/2 - 2)/(yMax - yMin)
+            
+            self.chartTransform = CGAffineTransform(a: xScale, b: 0, c: 0, d: -yScale, tx: yOffSet, ty: self.bounds.height - xOffSet)
+            self.setNeedsDisplay() // the rectangle needs to be redrawn.
+        }
     }
     
     override func draw(_ rect: CGRect) {
@@ -168,12 +169,14 @@ class GraphView: UIView {
         }
         
         let linePath = CGMutablePath()
-        linePath.addLines(between: points, transform: chartTransform!) // we are only force unwrapping it because we know that it won't be nil
+        
+        guard let transform = chartTransform else { return }
+        linePath.addLines(between: points, transform: transform) // we are only force unwrapping it because we know that it won't be nil
         
         lineLayer.path = linePath
         
         if showPoints {
-            circleLayer.path = circles(atPoints: points, withTransform: chartTransform!)
+            circleLayer.path = circles(atPoints: points, withTransform: transform)
         }
     }
     

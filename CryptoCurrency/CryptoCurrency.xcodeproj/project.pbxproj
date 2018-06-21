@@ -26,6 +26,7 @@
 		71831DB320D7FCD900327C0A /* CurrencyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71831DB220D7FCD900327C0A /* CurrencyDetailViewController.swift */; };
 		71831DB520D962D700327C0A /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71831DB420D962D700327C0A /* UIColorExt.swift */; };
 		71AA77B720DAD18F00B46117 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AA77B620DAD18F00B46117 /* GraphView.swift */; };
+		71AA77BB20DC27B500B46117 /* Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AA77BA20DC27B500B46117 /* Conversions.swift */; };
 		D47547B620DAA7380026360B /* ValidationStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47547B520DAA7380026360B /* ValidationStringExtension.swift */; };
 		D47705C020D44BD400DA0464 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47705BF20D44BD400DA0464 /* UITextFieldExtension.swift */; };
 		D47705C220D93B9800DA0464 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47705C120D93B9800DA0464 /* SignUpViewController.swift */; };
@@ -75,6 +76,7 @@
 		71831DB220D7FCD900327C0A /* CurrencyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CurrencyDetailViewController.swift; path = CryptoCurrency/Storyboards/CurrencyDetailViewController.swift; sourceTree = SOURCE_ROOT; };
 		71831DB420D962D700327C0A /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
 		71AA77B620DAD18F00B46117 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		71AA77BA20DC27B500B46117 /* Conversions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversions.swift; sourceTree = "<group>"; };
 		D47547B520DAA7380026360B /* ValidationStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationStringExtension.swift; sourceTree = "<group>"; };
 		D47705BF20D44BD400DA0464 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		D47705C120D93B9800DA0464 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = CryptoCurrency/Extensions/SignUpViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -233,6 +235,7 @@
 				D47705BF20D44BD400DA0464 /* UITextFieldExtension.swift */,
 				71831DB420D962D700327C0A /* UIColorExt.swift */,
 				D47547B520DAA7380026360B /* ValidationStringExtension.swift */,
+				71AA77BA20DC27B500B46117 /* Conversions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 				71831DB320D7FCD900327C0A /* CurrencyDetailViewController.swift in Sources */,
 				D4AA047D20D412A20018BAA0 /* LoginViewController.swift in Sources */,
 				D47705C020D44BD400DA0464 /* UITextFieldExtension.swift in Sources */,
+				71AA77BB20DC27B500B46117 /* Conversions.swift in Sources */,
 				71AA77B720DAD18F00B46117 /* GraphView.swift in Sources */,
 				71831D9A20D3FE0500327C0A /* TabBarController.swift in Sources */,
 				711526F420D2E74000D7DDA3 /* AppDelegate.swift in Sources */,
