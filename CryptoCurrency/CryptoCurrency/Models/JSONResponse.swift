@@ -26,12 +26,12 @@ struct ExchangeResponse: Codable {
 struct DataClass: Codable {
     let coinInfo: CoinInfo
     let aggregatedData: AggregatedData
-//    let exchanges: [AggregatedData]
+    let exchanges: [AggregatedData]
     
     enum CodingKeys: String, CodingKey {
         case coinInfo = "CoinInfo"
         case aggregatedData = "AggregatedData"
-//        case exchanges = "Exchanges"
+        case exchanges = "Exchanges"
     }
 }
 
