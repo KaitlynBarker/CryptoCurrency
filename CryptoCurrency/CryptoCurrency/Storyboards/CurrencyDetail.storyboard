@@ -31,7 +31,7 @@
         <!--View Controller-->
         <scene sceneID="B5A-Z8-nN9">
             <objects>
-                <viewController id="b0T-fU-J2I" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CurrencyDetail" id="b0T-fU-J2I" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="G5m-9w-ZZD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
