@@ -17,6 +17,8 @@
 		7115270120D2E74000D7DDA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 711526FF20D2E74000D7DDA3 /* LaunchScreen.storyboard */; };
 		7115270C20D2E74000D7DDA3 /* CryptoCurrencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7115270B20D2E74000D7DDA3 /* CryptoCurrencyTests.swift */; };
 		7115271720D2E74000D7DDA3 /* CryptoCurrencyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7115271620D2E74000D7DDA3 /* CryptoCurrencyUITests.swift */; };
+		7128603220DD4F3F002CC969 /* DemoBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7128603020DD4F3F002CC969 /* DemoBaseViewController.swift */; };
+		7128603320DD4F3F002CC969 /* CandleStickChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7128603120DD4F3F002CC969 /* CandleStickChartViewController.swift */; };
 		71831D9820D3FDF200327C0A /* TabBarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71831D9720D3FDF200327C0A /* TabBarController.storyboard */; };
 		71831D9A20D3FE0500327C0A /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71831D9920D3FE0500327C0A /* TabBarController.swift */; };
 		71831D9C20D4005F00327C0A /* PopularCurrency.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71831D9B20D4005F00327C0A /* PopularCurrency.storyboard */; };
@@ -68,6 +70,8 @@
 		7115271220D2E74000D7DDA3 /* CryptoCurrencyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptoCurrencyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7115271620D2E74000D7DDA3 /* CryptoCurrencyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCurrencyUITests.swift; sourceTree = "<group>"; };
 		7115271820D2E74000D7DDA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7128603020DD4F3F002CC969 /* DemoBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoBaseViewController.swift; sourceTree = "<group>"; };
+		7128603120DD4F3F002CC969 /* CandleStickChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandleStickChartViewController.swift; sourceTree = "<group>"; };
 		71831D9720D3FDF200327C0A /* TabBarController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBarController.storyboard; sourceTree = "<group>"; };
 		71831D9920D3FE0500327C0A /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		71831D9B20D4005F00327C0A /* PopularCurrency.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PopularCurrency.storyboard; sourceTree = "<group>"; };
@@ -238,6 +242,8 @@
 		7115272A20D2E9E800D7DDA3 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				7128603120DD4F3F002CC969 /* CandleStickChartViewController.swift */,
+				7128603020DD4F3F002CC969 /* DemoBaseViewController.swift */,
 				71831D9920D3FE0500327C0A /* TabBarController.swift */,
 				71831DA220D4155800327C0A /* Constants.swift */,
 				71831DAE20D4367700327C0A /* NetworkManager.swift */,
@@ -496,11 +502,13 @@
 				71831DAF20D4367700327C0A /* NetworkManager.swift in Sources */,
 				71831DB520D962D700327C0A /* UIColorExt.swift in Sources */,
 				71831DB320D7FCD900327C0A /* CurrencyDetailViewController.swift in Sources */,
+				7128603220DD4F3F002CC969 /* DemoBaseViewController.swift in Sources */,
 				D4AA047D20D412A20018BAA0 /* LoginViewController.swift in Sources */,
 				D47705C020D44BD400DA0464 /* UITextFieldExtension.swift in Sources */,
 				71AA77BB20DC27B500B46117 /* Conversions.swift in Sources */,
 				71AA77B720DAD18F00B46117 /* GraphView.swift in Sources */,
 				71831D9A20D3FE0500327C0A /* TabBarController.swift in Sources */,
+				7128603320DD4F3F002CC969 /* CandleStickChartViewController.swift in Sources */,
 				711526F420D2E74000D7DDA3 /* AppDelegate.swift in Sources */,
 				D47705C220D93B9800DA0464 /* SignUpViewController.swift in Sources */,
 				71831DA720D415F800327C0A /* PopularCurrencyTableViewCell.swift in Sources */,
