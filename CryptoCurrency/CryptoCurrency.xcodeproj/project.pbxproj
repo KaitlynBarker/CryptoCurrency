@@ -30,7 +30,6 @@
 		71831DB120D7FC9D00327C0A /* CurrencyDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71831DB020D7FC9D00327C0A /* CurrencyDetail.storyboard */; };
 		71831DB320D7FCD900327C0A /* CurrencyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71831DB220D7FCD900327C0A /* CurrencyDetailViewController.swift */; };
 		71831DB520D962D700327C0A /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71831DB420D962D700327C0A /* UIColorExt.swift */; };
-		71AA77B720DAD18F00B46117 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AA77B620DAD18F00B46117 /* GraphView.swift */; };
 		71AA77BB20DC27B500B46117 /* Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AA77BA20DC27B500B46117 /* Conversions.swift */; };
 		D47547B620DAA7380026360B /* ValidationStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47547B520DAA7380026360B /* ValidationStringExtension.swift */; };
 		D47705C020D44BD400DA0464 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47705BF20D44BD400DA0464 /* UITextFieldExtension.swift */; };
@@ -83,7 +82,6 @@
 		71831DB020D7FC9D00327C0A /* CurrencyDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CurrencyDetail.storyboard; sourceTree = "<group>"; };
 		71831DB220D7FCD900327C0A /* CurrencyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CurrencyDetailViewController.swift; path = CryptoCurrency/Storyboards/CurrencyDetailViewController.swift; sourceTree = SOURCE_ROOT; };
 		71831DB420D962D700327C0A /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
-		71AA77B620DAD18F00B46117 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		71AA77BA20DC27B500B46117 /* Conversions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversions.swift; sourceTree = "<group>"; };
 		835BF3AC8B391BAE24D3E61E /* Pods-CryptoCurrencyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoCurrencyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoCurrencyTests/Pods-CryptoCurrencyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8E02E59304464960FF9360A8 /* Pods_CryptoCurrencyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoCurrencyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -219,7 +217,6 @@
 			isa = PBXGroup;
 			children = (
 				71831DA620D415F800327C0A /* PopularCurrencyTableViewCell.swift */,
-				71AA77B620DAD18F00B46117 /* GraphView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -506,7 +503,6 @@
 				D4AA047D20D412A20018BAA0 /* LoginViewController.swift in Sources */,
 				D47705C020D44BD400DA0464 /* UITextFieldExtension.swift in Sources */,
 				71AA77BB20DC27B500B46117 /* Conversions.swift in Sources */,
-				71AA77B720DAD18F00B46117 /* GraphView.swift in Sources */,
 				71831D9A20D3FE0500327C0A /* TabBarController.swift in Sources */,
 				7128603320DD4F3F002CC969 /* CandleStickChartViewController.swift in Sources */,
 				711526F420D2E74000D7DDA3 /* AppDelegate.swift in Sources */,

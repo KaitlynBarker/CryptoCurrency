@@ -38,9 +38,15 @@
                         <subviews>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Kgg-kJ-mPH">
                                 <rect key="frame" x="6" y="72" width="363" height="31"/>
+                                <connections>
+                                    <action selector="slidersValueChanged:" destination="b0T-fU-J2I" eventType="valueChanged" id="Hjr-J0-xKq"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="DAj-nI-iiK">
                                 <rect key="frame" x="6" y="110" width="363" height="31"/>
+                                <connections>
+                                    <action selector="slidersValueChanged:" destination="b0T-fU-J2I" eventType="valueChanged" id="x3k-qv-h99"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wch-49-qMH">
                                 <rect key="frame" x="8" y="148" width="359" height="20.5"/>
