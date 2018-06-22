@@ -14,8 +14,8 @@ class CandleStickChartViewController: DemoBaseViewController {
     @IBOutlet var chartView: CandleStickChartView!
     @IBOutlet var sliderX: UISlider!
     @IBOutlet var sliderY: UISlider!
-    @IBOutlet var sliderTextX: UITextField!
-    @IBOutlet var sliderTextY: UITextField!
+    @IBOutlet var sliderLabelX: UILabel!
+    @IBOutlet var sliderLabelY: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -122,8 +122,8 @@ class CandleStickChartViewController: DemoBaseViewController {
     
     // MARK: - Actions
     @IBAction func slidersValueChanged(_ sender: Any?) {
-        sliderTextX.text = "\(Int(sliderX.value))"
-        sliderTextY.text = "\(Int(sliderY.value))"
+        sliderLabelX.text = "\(Int(sliderX.value))"
+        sliderLabelY.text = "\(Int(sliderY.value))"
         
         self.updateChartData()
     }}

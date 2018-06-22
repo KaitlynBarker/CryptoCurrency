@@ -28,10 +28,10 @@
             </objects>
             <point key="canvasLocation" x="1048.8" y="112.89355322338831"/>
         </scene>
-        <!--View Controller-->
+        <!--Candle Stick Chart View Controller-->
         <scene sceneID="B5A-Z8-nN9">
             <objects>
-                <viewController storyboardIdentifier="CurrencyDetail" id="b0T-fU-J2I" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CurrencyDetail" id="b0T-fU-J2I" customClass="CandleStickChartViewController" customModule="CryptoCurrency" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="G5m-9w-ZZD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -42,19 +42,54 @@
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="DAj-nI-iiK">
                                 <rect key="frame" x="6" y="110" width="363" height="31"/>
                             </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wch-49-qMH">
+                                <rect key="frame" x="8" y="148" width="359" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uXi-Dd-skt">
+                                <rect key="frame" x="8" y="176" width="359" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vcn-YZ-BgK" customClass="CandleStickChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="202" width="375" height="465"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="465" id="M1Y-wS-sfO"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="IXY-vO-TkH" firstAttribute="trailing" secondItem="uXi-Dd-skt" secondAttribute="trailing" constant="8" id="1qv-UK-naS"/>
+                            <constraint firstItem="IXY-vO-TkH" firstAttribute="bottom" secondItem="Vcn-YZ-BgK" secondAttribute="bottom" id="5qm-wQ-rBn"/>
+                            <constraint firstItem="uXi-Dd-skt" firstAttribute="top" secondItem="wch-49-qMH" secondAttribute="bottom" constant="8" id="APD-M4-Mun"/>
+                            <constraint firstItem="IXY-vO-TkH" firstAttribute="trailing" secondItem="Vcn-YZ-BgK" secondAttribute="trailing" id="DTT-lY-QBU"/>
+                            <constraint firstItem="IXY-vO-TkH" firstAttribute="trailing" secondItem="wch-49-qMH" secondAttribute="trailing" constant="8" id="GqQ-I5-O4r"/>
+                            <constraint firstItem="uXi-Dd-skt" firstAttribute="leading" secondItem="IXY-vO-TkH" secondAttribute="leading" constant="8" id="JTX-U4-gyP"/>
                             <constraint firstItem="DAj-nI-iiK" firstAttribute="top" secondItem="Kgg-kJ-mPH" secondAttribute="bottom" constant="8" id="NRt-Oo-ias"/>
+                            <constraint firstItem="wch-49-qMH" firstAttribute="leading" secondItem="IXY-vO-TkH" secondAttribute="leading" constant="8" id="PBr-Ba-icI"/>
                             <constraint firstItem="IXY-vO-TkH" firstAttribute="trailing" secondItem="DAj-nI-iiK" secondAttribute="trailing" constant="8" id="aTh-lZ-ScE"/>
                             <constraint firstItem="IXY-vO-TkH" firstAttribute="trailing" secondItem="Kgg-kJ-mPH" secondAttribute="trailing" constant="8" id="bXn-G4-hOh"/>
                             <constraint firstItem="Kgg-kJ-mPH" firstAttribute="leading" secondItem="IXY-vO-TkH" secondAttribute="leading" constant="8" id="eW8-c5-caz"/>
+                            <constraint firstItem="Vcn-YZ-BgK" firstAttribute="leading" secondItem="IXY-vO-TkH" secondAttribute="leading" id="kQO-N4-rWo"/>
                             <constraint firstItem="DAj-nI-iiK" firstAttribute="leading" secondItem="IXY-vO-TkH" secondAttribute="leading" constant="8" id="vho-6s-wYQ"/>
                             <constraint firstItem="Kgg-kJ-mPH" firstAttribute="top" secondItem="IXY-vO-TkH" secondAttribute="top" constant="8" id="wVe-zX-0Ww"/>
+                            <constraint firstItem="wch-49-qMH" firstAttribute="top" secondItem="DAj-nI-iiK" secondAttribute="bottom" constant="8" id="xRp-Yg-o0D"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IXY-vO-TkH"/>
                     </view>
                     <navigationItem key="navigationItem" id="TbV-sS-bld"/>
+                    <connections>
+                        <outlet property="chartView" destination="Vcn-YZ-BgK" id="hii-Hl-cCw"/>
+                        <outlet property="sliderLabelX" destination="wch-49-qMH" id="ogk-dW-mqj"/>
+                        <outlet property="sliderLabelY" destination="uXi-Dd-skt" id="Chw-a9-kwu"/>
+                        <outlet property="sliderX" destination="Kgg-kJ-mPH" id="vrx-gv-IwS"/>
+                        <outlet property="sliderY" destination="DAj-nI-iiK" id="e8Z-Lz-9Ph"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HR6-wH-fO8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
