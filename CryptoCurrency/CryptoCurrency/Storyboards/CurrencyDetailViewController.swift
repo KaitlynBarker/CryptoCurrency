@@ -26,11 +26,11 @@ class CurrencyDetailViewController: UIViewController {
         super.viewDidLoad()
         
         self.graphView.backgroundColor = UIColor.darkGray
-        self.graphView.lineColor = UIColor.customGreen
+//        self.graphView.lineColor = UIColor.customGreen
         self.graphView.circleColor = UIColor.clear
         self.graphView.axisColor = UIColor.white
-        self.graphView.deltaX = 20
-        self.graphView.deltaY = 40
+        self.graphView.deltaX = 2
+        self.graphView.deltaY = 1000
         
         self.populateView()
     }
@@ -47,36 +47,34 @@ class CurrencyDetailViewController: UIViewController {
             guard let response = response else { return }
             let currencyInfo = response.data.coinInfo
             let aggregatedData = response.data.aggregatedData
-//            let exchanges = response.data.exchanges
-//
-//            var points: [CGPoint] = []
-//
-//            for exchange in exchanges {
-//                let price = Int(exchange.price)
-//                let robotTime = exchange.lastupdate
-//                let hour = Double(robotTime).getDateHour()
-//                print(hour)
+            let exchanges = response.data.exchanges
+
+            var points: [CGPoint] = []
+
+            for exchange in exchanges {
+                let price = Int(exchange.price) // vertical
+                let robotTime = exchange.lastupdate
+                let hour = Double(robotTime).getDateHour() // horizontal
 //                let day = Double(robotTime).getDateDay()
-//                print(day)
-//                let currentPoint = CGPoint(x: hour, y: price)
-//                points.append(currentPoint)
-//            }
-            
-            let f: (CGFloat) -> CGPoint = {
-                let noiseY = (CGFloat(arc4random_uniform(2)) * 2 - 1) * CGFloat(arc4random_uniform(4))
-                let noiseX = (CGFloat(arc4random_uniform(2)) * 2 - 1) * CGFloat(arc4random_uniform(4))
-                let b: CGFloat = 5
-                let y = 2 * $0 + b + noiseY
-                
-                return CGPoint(x: $0 + noiseY, y: y)
+                let currentPoint = CGPoint(x: hour, y: price)
+                points.append(currentPoint)
             }
             
-            let xPoints = [Int](1..<20)
-            let points = xPoints.map { f(CGFloat($0 * 10)) }
+//            let f: (CGFloat) -> CGPoint = {
+//                let noiseY = (CGFloat(arc4random_uniform(2)) * 2 - 1) * CGFloat(arc4random_uniform(4))
+//                let noiseX = (CGFloat(arc4random_uniform(2)) * 2 - 1) * CGFloat(arc4random_uniform(4))
+//                let b: CGFloat = 5
+//                let y = 2 * $0 + b + noiseY
+//
+//                return CGPoint(x: $0 + noiseY, y: y)
+//            }
+//
+//            let xPoints = [Int](1..<20)
+//            let points = xPoints.map { f(CGFloat($0 * 10)) }
             
-            self.graphView.plot(points)
             
             DispatchQueue.main.async {
+                self.graphView.plot(points)
                 self.currencyNameLabel.text = "Name: \(currencyInfo.fullName)"
                 self.conversionLabel.text = "\(currencyInfo.name) -> USD"
                 self.currentPriceLabel.text = "Current Price: \(aggregatedData.price)"

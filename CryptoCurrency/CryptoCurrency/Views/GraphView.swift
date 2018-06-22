@@ -1,14 +1,14 @@
  //
-//  GraphView.swift
-//  CryptoCurrency
-//
-//  Created by Kaitlyn Barker on 6/20/18.
-//  Copyright © 2018 Kaitlyn Barker. All rights reserved.
-//
-
-import UIKit
-
-class GraphView: UIView {
+ //  GraphView.swift
+ //  CryptoCurrency
+ //
+ //  Created by Kaitlyn Barker on 6/20/18.
+ //  Copyright © 2018 Kaitlyn Barker. All rights reserved.
+ //
+ 
+ import UIKit
+ 
+ class GraphView: UIView {
     let lineLayer = CAShapeLayer()
     let circleLayer = CAShapeLayer()
     
@@ -48,8 +48,8 @@ class GraphView: UIView {
     var axisLineWidth: CGFloat = 1
     var deltaX: CGFloat = 10 // distance between the points on the lines
     var deltaY: CGFloat = 10
-    var xMax: CGFloat = 100 // max # in the x axis
-    var yMax: CGFloat = 100
+    var xMax: CGFloat = 24 // max # in the x axis
+    var yMax: CGFloat = 100000000
     var xMin: CGFloat = 0
     var yMin: CGFloat = 0
     
@@ -128,13 +128,11 @@ class GraphView: UIView {
         let xOffSet = xLabelSize.height + 2 // separation between the labels
         let yOffSet = yLabelSize.width + 5
         
-        DispatchQueue.main.async {
-            let xScale = (self.bounds.width - yOffSet - xLabelSize.width/2 - 2)/(xMax - xMin)
-            let yScale = (self.bounds.height - xOffSet - yLabelSize.height/2 - 2)/(yMax - yMin)
-            
-            self.chartTransform = CGAffineTransform(a: xScale, b: 0, c: 0, d: -yScale, tx: yOffSet, ty: self.bounds.height - xOffSet)
-            self.setNeedsDisplay() // the rectangle needs to be redrawn.
-        }
+        let xScale = (self.bounds.width - yOffSet - xLabelSize.width/2 - 2)/(xMax - xMin)
+        let yScale = (self.bounds.height - xOffSet - yLabelSize.height/2 - 2)/(yMax - yMin)
+        
+        self.chartTransform = CGAffineTransform(a: xScale, b: 0, c: 0, d: -yScale, tx: yOffSet, ty: self.bounds.height - xOffSet)
+        self.setNeedsDisplay() // the rectangle needs to be redrawn.
     }
     
     override func draw(_ rect: CGRect) {
@@ -165,12 +163,13 @@ class GraphView: UIView {
         self.data = points
         
         if self.chartTransform == nil {
+            debugPrint("chart transform is nil", #file, #function)
             setAxisRange(forPoints: points)
         }
         
         let linePath = CGMutablePath()
         
-        guard let transform = chartTransform else { return }
+        guard let transform = chartTransform else { debugPrint("Chart Transform isnt cooperating"); return }
         linePath.addLines(between: points, transform: transform) // we are only force unwrapping it because we know that it won't be nil
         
         lineLayer.path = linePath
@@ -248,17 +247,17 @@ class GraphView: UIView {
         
         context.restoreGState()
     }
-}
-
-extension String {
+ }
+ 
+ extension String {
     // size function - will help us create the graph so that we can update the size of the font so everything fits.
     
     func size(withSystemFontSize pointSize: CGFloat) -> CGSize {
         return (self as NSString).size(withAttributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: pointSize)])
     }
-}
-
-extension CGPoint {
+ }
+ 
+ extension CGPoint {
     func adding(x: CGFloat) -> CGPoint {
         return CGPoint(x: self.x + x, y: self.y)
     }
@@ -266,4 +265,4 @@ extension CGPoint {
     func adding(y: CGFloat) -> CGPoint {
         return CGPoint(x: self.x, y: self.y + y)
     }
-}
+ }
