@@ -55,7 +55,7 @@ class PopularCurrencyListTableViewController: UITableViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toCurrencyDetailSB" {
-            guard let destinationVC = segue.destination as? CurrencyDetailViewController else { return }
+            guard let destinationVC = segue.destination as? CandleStickChartViewController else { return }
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
             let currencyData = self.currencyData[indexPath.row]
             

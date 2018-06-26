@@ -14,26 +14,17 @@ class CandleStickChartViewController: DemoBaseViewController {
     @IBOutlet var chartView: CandleStickChartView!
     @IBOutlet var sliderX: UISlider!
     @IBOutlet var sliderY: UISlider!
-    @IBOutlet var sliderLabelX: UILabel!
-    @IBOutlet var sliderLabelY: UILabel!
+    @IBOutlet var sliderTextFieldX: UITextField!
+    @IBOutlet var sliderTextFieldY: UITextField!
+    @IBOutlet weak var currencyNameLabel: UILabel!
+    @IBOutlet weak var conversionLabel: UILabel!
+    
+    var currencyData: Datum?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        self.title = "Bubble Chart"
-        self.options = [.toggleValues,
-                        .toggleIcons,
-                        .toggleHighlight,
-                        .animateX,
-                        .animateY,
-                        .animateXY,
-                        .saveToGallery,
-                        .togglePinchZoom,
-                        .toggleAutoScaleMinMax,
-                        .toggleShadowColorSameAsCandle,
-                        .toggleShowCandleBar,
-                        .toggleData]
         
         chartView.delegate = self
         
@@ -66,64 +57,63 @@ class CandleStickChartViewController: DemoBaseViewController {
     }
     
     override func updateChartData() {
-        if self.shouldHideData {
-            chartView.data = nil
-            return
-        }
-        
         self.setDataCount(Int(sliderX.value), range: UInt32(sliderY.value))
     }
     
     func setDataCount(_ count: Int, range: UInt32) {
-        let yVals1 = (0..<count).map { (i) -> CandleChartDataEntry in
-            let mult = range + 1
-            let val = Double(arc4random_uniform(40) + mult)
-            let high = Double(arc4random_uniform(9) + 8)
-            let low = Double(arc4random_uniform(9) + 8)
-            let open = Double(arc4random_uniform(6) + 1)
-            let close = Double(arc4random_uniform(6) + 1)
-            let even = i % 2 == 0
+        
+        guard let currencyData = self.currencyData else { return }
+        
+        NetworkManager.shared.getExchangeData(datum: currencyData) { (response) in
+            guard let response = response else { return }
             
-            return CandleChartDataEntry(x: Double(i), shadowH: val + high, shadowL: val - low, open: even ? val + open : val - open, close: even ? val - close : val + close, icon: UIImage(named: "icon")!)
-        }
-        
-        let set1 = CandleChartDataSet(values: yVals1, label: "Data Set")
-        set1.axisDependency = .left
-        set1.setColor(UIColor(white: 80/255, alpha: 1))
-        set1.drawIconsEnabled = false
-        set1.shadowColor = .darkGray
-        set1.shadowWidth = 0.7
-        set1.decreasingColor = .red
-        set1.decreasingFilled = true
-        set1.increasingColor = UIColor(red: 122/255, green: 242/255, blue: 84/255, alpha: 1)
-        set1.increasingFilled = false
-        set1.neutralColor = .blue
-        
-        let data = CandleChartData(dataSet: set1)
-        chartView.data = data
-    }
-    
-    override func optionTapped(_ option: Option) {
-        switch option {
-        case .toggleShadowColorSameAsCandle:
-            for set in chartView.data!.dataSets as! [CandleChartDataSet] {
-                set.shadowColorSameAsCandle = !set.shadowColorSameAsCandle
+            let currencyInfo = response.data.coinInfo
+            let aggregatedData = response.data.aggregatedData
+//            let exchanges = response.data.exchanges
+            
+            DispatchQueue.main.async {
+                self.currencyNameLabel.text = currencyInfo.fullName
+                self.conversionLabel.text = "\(currencyInfo.name) -> USD"
             }
-            chartView.notifyDataSetChanged()
-        case .toggleShowCandleBar:
-            for set in chartView.data!.dataSets as! [CandleChartDataSet] {
-                set.showCandleBar = !set.showCandleBar
+            
+            let yVals1 = (0..<count).map { (i) -> CandleChartDataEntry in
+                let mult = range + 1
+                let val = Double(arc4random_uniform(40) + mult)
+//                let val = aggregatedData.price + Double(mult)
+//                let high = Double(arc4random_uniform(9) + 8)
+                let high = aggregatedData.high24Hour
+//                let low = Double(arc4random_uniform(9) + 8)
+                let low = aggregatedData.low24Hour
+//                let open = Double(arc4random_uniform(6) + 1)
+                let open = aggregatedData.open24Hour
+//                let close = Double(arc4random_uniform(6) + 1)
+                let close = aggregatedData.price
+                let even = i % 2 == 0
+                
+                return CandleChartDataEntry(x: Double(i), shadowH: val + high, shadowL: val - low, open: even ? val + open : val - open, close: even ? val - close : val + close, icon: #imageLiteral(resourceName: "Icon-29"))
             }
-            chartView.notifyDataSetChanged()
-        default:
-            super.handleOption(option, forChartView: chartView)
+            
+            let set1 = CandleChartDataSet(values: yVals1, label: "Data Set")
+            set1.axisDependency = .left
+            set1.setColor(UIColor(white: 80/255, alpha: 1))
+            set1.drawIconsEnabled = false
+            set1.shadowColor = .darkGray
+            set1.shadowWidth = 0.7
+            set1.decreasingColor = .red
+            set1.decreasingFilled = true
+            set1.increasingColor = UIColor(red: 122/255, green: 242/255, blue: 84/255, alpha: 1)
+            set1.increasingFilled = false
+            set1.neutralColor = .blue
+            
+            let data = CandleChartData(dataSet: set1)
+            self.chartView.data = data
         }
     }
     
     // MARK: - Actions
     @IBAction func slidersValueChanged(_ sender: Any?) {
-        sliderLabelX.text = "\(Int(sliderX.value))"
-        sliderLabelY.text = "\(Int(sliderY.value))"
+        sliderTextFieldX.text = "\(Int(sliderX.value))"
+        sliderTextFieldY.text = "\(Int(sliderY.value))"
         
         self.updateChartData()
     }}
