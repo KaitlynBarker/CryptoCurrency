@@ -69,17 +69,28 @@ class CandleStickChartViewController: DemoBaseViewController {
             
             let currencyInfo = response.data.coinInfo
             let aggregatedData = response.data.aggregatedData
-//            let exchanges = response.data.exchanges
+            let exchanges = response.data.exchanges
+            
+            var priceArray: [Double] = []
+            
+            for exchange in exchanges {
+                let price = exchange.price
+                priceArray.append(price)
+            }
+            
+            guard let maxPrice = priceArray.max() else { return }
             
             DispatchQueue.main.async {
                 self.currencyNameLabel.text = currencyInfo.fullName
                 self.conversionLabel.text = "\(currencyInfo.name) -> USD"
+                self.sliderX.maximumValue = Float(exchanges.count)
+                self.sliderY.maximumValue = Float(maxPrice)
             }
             
             let yVals1 = (0..<count).map { (i) -> CandleChartDataEntry in
                 let mult = range + 1
-                let val = Double(arc4random_uniform(40) + mult)
-//                let val = aggregatedData.price + Double(mult)
+//                let val = Double(arc4random_uniform(40) + mult)
+                let val = aggregatedData.price + Double(mult)
 //                let high = Double(arc4random_uniform(9) + 8)
                 let high = aggregatedData.high24Hour
 //                let low = Double(arc4random_uniform(9) + 8)
