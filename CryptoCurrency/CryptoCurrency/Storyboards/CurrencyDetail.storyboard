@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -28,37 +29,58 @@
             </objects>
             <point key="canvasLocation" x="1048.8" y="112.89355322338831"/>
         </scene>
-        <!--View Controller-->
+        <!--Candle Stick Chart View Controller-->
         <scene sceneID="B5A-Z8-nN9">
             <objects>
-                <viewController storyboardIdentifier="CurrencyDetail" id="b0T-fU-J2I" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CurrencyDetail" id="b0T-fU-J2I" customClass="CandleStickChartViewController" customModule="CryptoCurrency" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="G5m-9w-ZZD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Kgg-kJ-mPH">
-                                <rect key="frame" x="6" y="72" width="363" height="31"/>
-                            </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="DAj-nI-iiK">
-                                <rect key="frame" x="6" y="110" width="363" height="31"/>
-                            </slider>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vcn-YZ-BgK" customClass="CandleStickChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="126" width="375" height="400"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="tia-qZ-hiW">
+                                <rect key="frame" x="8" y="72" width="359" height="46"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Vx-cD-Yx7">
+                                        <rect key="frame" x="0.0" y="0.0" width="359" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kVo-Rf-Pln">
+                                        <rect key="frame" x="0.0" y="25.5" width="359" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="DAj-nI-iiK" firstAttribute="top" secondItem="Kgg-kJ-mPH" secondAttribute="bottom" constant="8" id="NRt-Oo-ias"/>
-                            <constraint firstItem="IXY-vO-TkH" firstAttribute="trailing" secondItem="DAj-nI-iiK" secondAttribute="trailing" constant="8" id="aTh-lZ-ScE"/>
-                            <constraint firstItem="IXY-vO-TkH" firstAttribute="trailing" secondItem="Kgg-kJ-mPH" secondAttribute="trailing" constant="8" id="bXn-G4-hOh"/>
-                            <constraint firstItem="Kgg-kJ-mPH" firstAttribute="leading" secondItem="IXY-vO-TkH" secondAttribute="leading" constant="8" id="eW8-c5-caz"/>
-                            <constraint firstItem="DAj-nI-iiK" firstAttribute="leading" secondItem="IXY-vO-TkH" secondAttribute="leading" constant="8" id="vho-6s-wYQ"/>
-                            <constraint firstItem="Kgg-kJ-mPH" firstAttribute="top" secondItem="IXY-vO-TkH" secondAttribute="top" constant="8" id="wVe-zX-0Ww"/>
+                            <constraint firstItem="Vcn-YZ-BgK" firstAttribute="height" secondItem="G5m-9w-ZZD" secondAttribute="height" multiplier="0.6" id="0Xs-JP-Oeo"/>
+                            <constraint firstItem="tia-qZ-hiW" firstAttribute="top" secondItem="IXY-vO-TkH" secondAttribute="top" constant="8" id="M7n-OZ-Bj3"/>
+                            <constraint firstItem="Vcn-YZ-BgK" firstAttribute="leading" secondItem="G5m-9w-ZZD" secondAttribute="leading" id="RRm-DI-CwG"/>
+                            <constraint firstItem="tia-qZ-hiW" firstAttribute="leading" secondItem="IXY-vO-TkH" secondAttribute="leading" constant="8" id="fWA-Gu-Wth"/>
+                            <constraint firstItem="Vcn-YZ-BgK" firstAttribute="top" secondItem="tia-qZ-hiW" secondAttribute="bottom" constant="8" id="hyN-Sf-PRi"/>
+                            <constraint firstItem="IXY-vO-TkH" firstAttribute="trailing" secondItem="tia-qZ-hiW" secondAttribute="trailing" constant="8" id="mr2-ch-mDp"/>
+                            <constraint firstAttribute="trailing" secondItem="Vcn-YZ-BgK" secondAttribute="trailing" id="xic-WI-f68"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IXY-vO-TkH"/>
                     </view>
                     <navigationItem key="navigationItem" id="TbV-sS-bld"/>
+                    <connections>
+                        <outlet property="chartView" destination="Vcn-YZ-BgK" id="hii-Hl-cCw"/>
+                        <outlet property="conversionLabel" destination="kVo-Rf-Pln" id="XSP-gV-WNr"/>
+                        <outlet property="currencyNameLabel" destination="5Vx-cD-Yx7" id="y2z-1o-zgU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HR6-wH-fO8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1887" y="111"/>
+            <point key="canvasLocation" x="1885.5999999999999" y="110.19490254872565"/>
         </scene>
     </scenes>
 </document>

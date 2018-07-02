@@ -35,9 +35,15 @@ class PopularCurrencyTableViewCell: UITableViewCell {
                 self.currencyImageView.image = image
                 self.currencyNameLabel.text = coinInfo.fullName
                 self.conversionTypeLabel.text = "\(coinInfo.name) -> \(conversionInfo.currencyTo.rawValue.uppercased())"
-                
-                // FIXME: - update the current price label when we figure out how to get the price.
-                self.currentPriceLabel.text = "YOUR SOUL!!"
+            }
+        }
+        
+        NetworkManager.shared.getCurrentPrice(datum: currencyData) { (response) in
+            guard let response = response else { return }
+            let price = response.usd
+            
+            DispatchQueue.main.async {
+                self.currentPriceLabel.text = "$\(price)"
             }
         }
     }
