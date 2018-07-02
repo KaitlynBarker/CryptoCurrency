@@ -38,8 +38,9 @@ class PopularCurrencyTableViewCell: UITableViewCell {
             }
         }
         
-        NetworkManager.shared.getCurrentPrice(datum: currencyData) { (price) in
-            guard let price = price else { return }
+        NetworkManager.shared.getCurrentPrice(datum: currencyData) { (response) in
+            guard let response = response else { return }
+            let price = response.usd
             
             DispatchQueue.main.async {
                 self.currentPriceLabel.text = "$\(price)"
