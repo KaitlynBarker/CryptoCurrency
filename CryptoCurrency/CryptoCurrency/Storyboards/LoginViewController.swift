@@ -20,22 +20,22 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        emailTextField.setBottomBorder()
+        self.emailTextField.setBottomBorder()
         
-        emailTextField.leftViewMode = UITextFieldViewMode.always
+        self.emailTextField.leftViewMode = UITextFieldViewMode.always
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
         let image = UIImage(named: "userIcon.png")
         imageView.image = image
-        emailTextField.leftView = imageView
+        self.emailTextField.leftView = imageView
  
         
-        passwordTextField.setBottomBorder()
+        self.passwordTextField.setBottomBorder()
         
-        passwordTextField.leftViewMode = UITextFieldViewMode.always
+        self.passwordTextField.leftViewMode = UITextFieldViewMode.always
         let imageViewPass = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
         let imagePass = UIImage(named: "passwordIcon.png")
         imageViewPass.image = imagePass
-        passwordTextField.leftView = imageViewPass
+        self.passwordTextField.leftView = imageViewPass
         // Do any additional setup after loading the view.
     }
     @IBAction func loginButtonPressed(_ sender: Any) {
@@ -81,6 +81,8 @@ class LoginViewController: UIViewController {
                 let objectEntity = result.firstObject as! UserLogin
                 
                 if objectEntity.email == email && objectEntity.password == password {
+                    //performSegue(withIdentifier: "loginSegue", sender: self)
+                    /*
                     let alertController = UIAlertController(title: "Success", message: "Login succesful", preferredStyle: .alert)
                     
                     let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -88,6 +90,8 @@ class LoginViewController: UIViewController {
                     
                     self.present(alertController, animated: true, completion: nil)
                     print("Login Succesfully")
+                     
+                    */
                 }else{
                     let alertController = UIAlertController(title: "Error", message: "Please enter a valid email and password.", preferredStyle: .alert)
                     

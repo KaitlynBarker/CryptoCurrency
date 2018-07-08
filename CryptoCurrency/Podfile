@@ -8,6 +8,7 @@ target 'CryptoCurrency' do
   # Pods for CryptoCurrency
 
   pod 'Charts'
+  pod 'OneTimePassword', '~> 3.1'
 
   target 'CryptoCurrencyTests' do
     inherit! :search_paths
