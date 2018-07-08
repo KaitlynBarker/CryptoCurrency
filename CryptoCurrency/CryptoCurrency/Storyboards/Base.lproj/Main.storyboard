@@ -83,6 +83,7 @@
                                 </state>
                                 <connections>
                                     <action selector="loginButtonPressed:" destination="OZL-cp-Ste" eventType="touchUpInside" id="A2I-7j-1zx"/>
+                                    <segue destination="YHB-iM-kBK" kind="show" identifier="loginSegue" id="0D9-gh-ttz"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -112,6 +113,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oU8-gA-yaP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1768.8" y="-111.0944527736132"/>
+        </scene>
+        <!--Two Factor Auth View Controller-->
+        <scene sceneID="YPW-nf-HYv">
+            <objects>
+                <viewController id="YHB-iM-kBK" customClass="TwoFactorAuthViewController" customModule="CryptoCurrency" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fvi-q2-O6C">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Google authenticator code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6a5-TY-tcA">
+                                <rect key="frame" x="16" y="318" width="343" height="30"/>
+                                <color key="backgroundColor" red="0.42745098040000001" green="0.78823529410000004" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Vjj-Qf-w7l"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                        <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ryf-IP-2b3">
+                                <rect key="frame" x="16" y="356" width="343" height="50"/>
+                                <color key="backgroundColor" red="0.34901960780000002" green="0.61176470589999998" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="XRe-dL-GLj"/>
+                                </constraints>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitTwoFactorPressed:" destination="YHB-iM-kBK" eventType="touchUpInside" id="30v-dq-kSc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.42745098040000001" green="0.78823529410000004" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="6a5-TY-tcA" firstAttribute="leading" secondItem="sF7-a8-FXb" secondAttribute="leading" constant="16" id="9yt-sO-8uu"/>
+                            <constraint firstItem="sF7-a8-FXb" firstAttribute="trailing" secondItem="6a5-TY-tcA" secondAttribute="trailing" constant="16" id="IYY-fY-yy6"/>
+                            <constraint firstItem="ryf-IP-2b3" firstAttribute="leading" secondItem="sF7-a8-FXb" secondAttribute="leading" constant="16" id="QZg-XO-nTo"/>
+                            <constraint firstItem="6a5-TY-tcA" firstAttribute="centerY" secondItem="Fvi-q2-O6C" secondAttribute="centerY" id="RsW-GD-mJu"/>
+                            <constraint firstItem="sF7-a8-FXb" firstAttribute="trailing" secondItem="ryf-IP-2b3" secondAttribute="trailing" constant="16" id="faT-Fr-bx8"/>
+                            <constraint firstItem="ryf-IP-2b3" firstAttribute="top" secondItem="6a5-TY-tcA" secondAttribute="bottom" constant="8" id="jf3-nt-c0F"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="sF7-a8-FXb"/>
+                    </view>
+                    <connections>
+                        <outlet property="googleAuthTextField" destination="6a5-TY-tcA" id="acn-JU-A5S"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="76b-fv-aKv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2809" y="-292"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="8eo-14-ubg">
@@ -243,7 +300,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9aJ-AQ-uuu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2662" y="-111"/>
+            <point key="canvasLocation" x="2622" y="430"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Iih-OO-GPP">

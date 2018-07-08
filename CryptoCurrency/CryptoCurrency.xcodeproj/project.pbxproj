@@ -30,6 +30,9 @@
 		71831DB120D7FC9D00327C0A /* CurrencyDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71831DB020D7FC9D00327C0A /* CurrencyDetail.storyboard */; };
 		71831DB520D962D700327C0A /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71831DB420D962D700327C0A /* UIColorExt.swift */; };
 		71AA77BB20DC27B500B46117 /* Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AA77BA20DC27B500B46117 /* Conversions.swift */; };
+		D450605420E17456006C50CB /* TwoFactorAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D450605320E17456006C50CB /* TwoFactorAuthViewController.swift */; };
+		D450605620E27CC2006C50CB /* AccountDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D450605520E27CC2006C50CB /* AccountDetail.storyboard */; };
+		D450605820E29AC8006C50CB /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D450605720E29AC8006C50CB /* AccountTableViewController.swift */; };
 		D47547B620DAA7380026360B /* ValidationStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47547B520DAA7380026360B /* ValidationStringExtension.swift */; };
 		D47705C020D44BD400DA0464 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47705BF20D44BD400DA0464 /* UITextFieldExtension.swift */; };
 		D47705C220D93B9800DA0464 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47705C120D93B9800DA0464 /* SignUpViewController.swift */; };
@@ -86,6 +89,9 @@
 		AED095F57879F07A26CE8FCB /* Pods-CryptoCurrency.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoCurrency.release.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoCurrency/Pods-CryptoCurrency.release.xcconfig"; sourceTree = "<group>"; };
 		C63E38207FA755ABD0F9639A /* Pods_CryptoCurrencyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoCurrencyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF4AD1E6A1DBA44AE500458 /* Pods-CryptoCurrencyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoCurrencyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoCurrencyUITests/Pods-CryptoCurrencyUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D450605320E17456006C50CB /* TwoFactorAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TwoFactorAuthViewController.swift; path = CryptoCurrency/TwoFactorAuthViewController.swift; sourceTree = SOURCE_ROOT; };
+		D450605520E27CC2006C50CB /* AccountDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccountDetail.storyboard; sourceTree = "<group>"; };
+		D450605720E29AC8006C50CB /* AccountTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AccountTableViewController.swift; path = CryptoCurrency/Storyboards/AccountTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		D47547B520DAA7380026360B /* ValidationStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationStringExtension.swift; sourceTree = "<group>"; };
 		D47705BF20D44BD400DA0464 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		D47705C120D93B9800DA0464 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = CryptoCurrency/Extensions/SignUpViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -206,6 +212,8 @@
 				D4AA047C20D412A20018BAA0 /* LoginViewController.swift */,
 				71831DA420D415A700327C0A /* PopularCurrencyListTableViewController.swift */,
 				D47705C120D93B9800DA0464 /* SignUpViewController.swift */,
+				D450605320E17456006C50CB /* TwoFactorAuthViewController.swift */,
+				D450605720E29AC8006C50CB /* AccountTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -252,6 +260,7 @@
 				71831D9B20D4005F00327C0A /* PopularCurrency.storyboard */,
 				71831D9720D3FDF200327C0A /* TabBarController.storyboard */,
 				71831DB020D7FC9D00327C0A /* CurrencyDetail.storyboard */,
+				D450605520E27CC2006C50CB /* AccountDetail.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -390,6 +399,7 @@
 			files = (
 				71831D9C20D4005F00327C0A /* PopularCurrency.storyboard in Resources */,
 				7115270120D2E74000D7DDA3 /* LaunchScreen.storyboard in Resources */,
+				D450605620E27CC2006C50CB /* AccountDetail.storyboard in Resources */,
 				71831DB120D7FC9D00327C0A /* CurrencyDetail.storyboard in Resources */,
 				711526FE20D2E74000D7DDA3 /* Assets.xcassets in Resources */,
 				71831D9820D3FDF200327C0A /* TabBarController.storyboard in Resources */,
@@ -439,11 +449,15 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CryptoCurrency/Pods-CryptoCurrency-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Base32/Base32.framework",
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+				"${BUILT_PRODUCTS_DIR}/OneTimePassword/OneTimePassword.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Base32.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OneTimePassword.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -498,11 +512,13 @@
 				7128603220DD4F3F002CC969 /* DemoBaseViewController.swift in Sources */,
 				D4AA047D20D412A20018BAA0 /* LoginViewController.swift in Sources */,
 				D47705C020D44BD400DA0464 /* UITextFieldExtension.swift in Sources */,
+				D450605820E29AC8006C50CB /* AccountTableViewController.swift in Sources */,
 				71AA77BB20DC27B500B46117 /* Conversions.swift in Sources */,
 				71831D9A20D3FE0500327C0A /* TabBarController.swift in Sources */,
 				7128603320DD4F3F002CC969 /* CandleStickChartViewController.swift in Sources */,
 				711526F420D2E74000D7DDA3 /* AppDelegate.swift in Sources */,
 				D47705C220D93B9800DA0464 /* SignUpViewController.swift in Sources */,
+				D450605420E17456006C50CB /* TwoFactorAuthViewController.swift in Sources */,
 				71831DA720D415F800327C0A /* PopularCurrencyTableViewCell.swift in Sources */,
 				711526FC20D2E74000D7DDA3 /* CryptoCurrency.xcdatamodeld in Sources */,
 				71831DA320D4155800327C0A /* Constants.swift in Sources */,
